@@ -4,8 +4,14 @@ on:
   workflow_dispatch:
   push:
     branches: [ "main", "master" ]
+    paths-ignore:
+          - 'README.md'
+          - '*.md'                   # Oppure ignora tutti i file Markdown
   pull_request:
     branches: [ "main", "master" ]
+    paths-ignore:
+      - 'README.md'
+      - '*.md'
 
 jobs:
   build-and-test:
