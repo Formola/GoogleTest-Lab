@@ -26,6 +26,10 @@ jobs:
       working-directory: build/level1_basic
       run: ctest --output-on-failure
 
+    - name: Run Tests (Level 1 with fixture)
+      working-directory: build/level1_advanced
+      run: ctest --output-on-failure
+
     - name: Run Tests (Level 2)
       working-directory: build/level2_intermediate
       run: ctest --output-on-failure

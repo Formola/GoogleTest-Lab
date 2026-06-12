@@ -20,8 +20,7 @@ TEST(ConfigParserTest, ParseValidLine) {
 TEST(ConfigParserTest, ParseLineWithoutEqualsSignReturnsNull) {
     ConfigPair* pair = ParseConfigLine("linewithoutequalsign");
 
-    printf("DEBUG: pair = %p\n", (void*)pair); // Debug: stampa l'indirizzo di pair
-    EXPECT_EQ(pair, nullptr) << "Il parsing di una linea senza '=' deve restituire null";
+    ASSERT_EQ(pair, nullptr) << "Il parsing di una linea senza '=' deve restituire null";
     
 }
 
@@ -29,7 +28,7 @@ TEST(ConfigParserTest, ParseLineWithoutEqualsSignReturnsNull) {
 TEST(ConfigParserTest, ParseEmptyLineReturnsNull) {
 
     ConfigPair* pair = ParseConfigLine("");
-    EXPECT_EQ(pair, nullptr) << "Il parsing di una linea vuota deve restituire null";
+    ASSERT_EQ(pair, nullptr) << "Il parsing di una linea vuota deve restituire null";
 
     // se ParseConfigLine restituisce già nullptr, non dobbiamo fare delete.
 }
@@ -50,6 +49,10 @@ TEST(KeyValidationTest, ValidatesKeyCharactersCorrectly) {
     EXPECT_EQ(IsValidKeyName("key^$%-trattino"), false);
     EXPECT_EQ(IsValidKeyName("!!!!key"), false);
     EXPECT_EQ(IsValidKeyName(""), false);
-
+    // EXPECT_NE
 
 }
+
+
+// try to create a test fixture to extend this parser exercise
+// something like a key generator

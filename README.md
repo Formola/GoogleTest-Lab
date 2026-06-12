@@ -58,3 +58,8 @@ For Level 3, you must define the `DatabaseTest` class yourself by inheriting fro
 
 * [GoogleTest Primer Documentation](https://google.github.io/googletest/primer.html)
 * Refer to the provided course slides for the correct syntax of assertions (`EXPECT_EQ`, `ASSERT_NE`, etc.).
+
+
+## Level1 Advances
+
+Rewrite the tests but using a Test Fixture and a sort of key generators.

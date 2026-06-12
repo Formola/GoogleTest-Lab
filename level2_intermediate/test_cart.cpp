@@ -31,9 +31,6 @@ TEST(ShoppingCartTest, CalculatesTotalForMultipleItems) {
     EXPECT_EQ(cart.GetItemCount(), 3) << "Current cart should have exactly 3 items!";
     EXPECT_EQ(cart.GetTotalCents(), 650) << "Current cart should have total price: 650 cents";
 
-    // cart.~ShoppingCart();
-    // ask prof is the object is deleted when the test ends.
-
 }
 
 // TODO STUDENTE 2: Testa l'estrazione di un prodotto esistente.
@@ -56,6 +53,8 @@ TEST(ShoppingCartTest, ExtractsExistingItemCorrectly) {
     // check price e name
     EXPECT_EQ(item->name, "Mela");
     EXPECT_EQ(item->price_cents, 150);
+
+    delete item;
 
     // check total new number of items in cart.
     EXPECT_EQ(cart.GetItemCount(), 2) << "After extraction, there are 2 items in the cart";

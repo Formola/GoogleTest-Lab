@@ -18,5 +18,6 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_subdirectory(level1_basic)
+add_subdirectory(level1_advanced)
 add_subdirectory(level2_intermediate)
 add_subdirectory(level3_advanced)
