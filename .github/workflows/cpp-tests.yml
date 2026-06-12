@@ -1,0 +1,35 @@
+name: C++ GoogleTest Auto-grading
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure and Build
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: Run Tests (Level 1)
+      working-directory: build/level1_basic
+      run: ctest --output-on-failure
+
+    - name: Run Tests (Level 2)
+      working-directory: build/level2_intermediate
+      run: ctest --output-on-failure
+
+    - name: Run Tests (Level 3)
+      working-directory: build/level3_advanced
+      run: ctest --output-on-failure
