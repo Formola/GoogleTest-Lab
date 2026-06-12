@@ -13,6 +13,7 @@ void ShoppingCart::AddItem(const std::string& name, int price_cents) {
 }
 
 Item* ShoppingCart::ExtractItem(const std::string& name) {
+    // iterate all items in vector, and eliminates the ones that match the exact name.
     for (auto it = items.begin(); it != items.end(); ++it) {
         if ((*it)->name == name) {
             Item* extracted = *it;

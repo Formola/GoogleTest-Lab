@@ -10,7 +10,8 @@ struct Item {
 class ShoppingCart {
     std::vector<Item*> items;
 public:
-    ~ShoppingCart(); // Si occupa di fare delete di tutti gli items
+    ~ShoppingCart(); // Si occupa di fare delete di tutti gli items.
+    // ~ symbol is the destructor in c++.
     void AddItem(const std::string& name, int price_cents);
     
     // Rimuove e restituisce l'item. Ritorna nullptr se non trovato.
