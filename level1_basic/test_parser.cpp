@@ -46,7 +46,7 @@ TEST(KeyValidationTest, ValidatesKeyCharactersCorrectly) {
     EXPECT_EQ(IsValidKeyName("chiave3333333"), true);
 
     // 3 INVALID CASES. Pass invalid string as key, with spaces or special chars.
-    EXPECT_EQ(IsValidKeyName("invalid key"), true);
+    EXPECT_EQ(IsValidKeyName("invalid key"), false);
     EXPECT_EQ(IsValidKeyName("key^$%-trattino"), false);
     EXPECT_EQ(IsValidKeyName("!!!!key"), false);
     EXPECT_EQ(IsValidKeyName(""), false);
