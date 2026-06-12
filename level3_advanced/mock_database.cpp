@@ -11,6 +11,8 @@ void MockDatabase::Disconnect() {
 void MockDatabase::InsertUser(const std::string& username, int id, const std::string& role) {
     UserRecord* record = new UserRecord{id, role};
     db[username] = record;
+    // db -> { "username": UserRecord}
+
 }
 
 UserRecord* MockDatabase::GetUser(const std::string& username) {

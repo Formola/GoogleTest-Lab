@@ -9,6 +9,9 @@ struct UserRecord {
 
 class MockDatabase {
     std::map<std::string, UserRecord*> db;
+    // { "username": UserRecord}
+    // { "username": {"id", "role"}}
+    
     bool connected = false;
 public:
     void Connect();
